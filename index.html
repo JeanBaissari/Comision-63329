@@ -3,47 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulador de Compras</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Y2KForUS - Tecnología Retro</title>
+    
+    <!-- Preload fonts for performance -->
+    <link rel="preload" href="fonts/MagicRetro.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/Posterable.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <!-- Custom Fonts -->
+    <style>
+        @font-face {
+            font-family: 'Magic Retro';
+            src: url('fonts/MagicRetro.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Posterable';
+            src: url('fonts/Posterable.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+    </style>
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Simulador de Compras de Productos</h1>
-    
-    <div class="container">
-        <div class="product-form">
-            <h2>Agregar Producto</h2>
-            <label for="producto">Producto:</label>
-            <input type="text" id="producto" placeholder="Ej. Tomates">
+    <header class="site-header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="#" aria-label="Y2KForUS Home">
+                    <h1 class="brand-logo">Y2KForUS</h1>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNavigation">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button" data-bs-toggle="dropdown">
+                                Categorías
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                                <li><a class="dropdown-item" href="#phones">Teléfonos Retro</a></li>
+                                <li><a class="dropdown-item" href="#music-devices">Reproductores</a></li>
+                                <li><a class="dropdown-item" href="#car-tech">Tecnología Automotriz</a></li>
+                                <li><a class="dropdown-item" href="#home-decor">Decoración</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">Sobre Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contacto</a>
+                        </li>
+                    </ul>
+                    <form id="searchForm" class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Buscar dispositivos" aria-label="Buscar">
+                        <button class="btn btn-outline-primary" type="submit">Buscar</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="site-main container-fluid">
+        <section class="hero-section row">
+            <div class="col-12 text-center">
+                <h2 class="hero-tagline">Tecnologías Y2K al alcance de todos con un solo clic.</h2>
+                <p class="hero-subtitle">Revive la nostalgia de la era digital</p>
+            </div>
+        </section>
+
+        <section id="featured-products" class="row g-4">
+            <div class="col-12">
+                <h3 class="section-title">Destacados</h3>
+            </div>
             
-            <label for="precio">Precio por unidad:</label>
-            <input type="number" id="precio" placeholder="Precio" step="0.01">
-            
-            <label for="cantidad">Cantidad:</label>
-            <input type="number" id="cantidad" placeholder="Cantidad" min="1">
-            
-            <button onclick="agregarProducto()">Agregar Producto</button>
+            <div class="col-md-4">
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="/placeholders/retro-phone.jpg" alt="Teléfono Retro" class="product-image">
+                    </div>
+                    <div class="product-details">
+                        <h4 class="product-title">Motorola RAZR Clásico</h4>
+                        <p class="product-description">Revive el icónico teléfono plegable</p>
+                        <button class="btn btn-primary">Ver Detalles</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="/placeholders/retro-walkman.jpg" alt="Walkman Retro" class="product-image">
+                    </div>
+                    <div class="product-details">
+                        <h4 class="product-title">Sony Walkman Original</h4>
+                        <p class="product-description">Música portátil como en los 90</p>
+                        <button class="btn btn-primary">Ver Detalles</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="/placeholders/retro-boombox.jpg" alt="Boombox Retro" class="product-image">
+                    </div>
+                    <div class="product-details">
+                        <h4 class="product-title">Boombox Años 80</h4>
+                        <p class="product-description">Sonido potente de la era disco</p>
+                        <button class="btn btn-primary">Ver Detalles</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Y2KForUS</h5>
+                    <p>Rescatando la tecnología de una era inolvidable</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Navegación</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#phones">Teléfonos</a></li>
+                        <li><a href="#music-devices">Reproductores</a></li>
+                        <li><a href="#car-tech">Tecnología Automotriz</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contacto</h5>
+                    <p>Email: contacto@y2kforus.com</p>
+                    <p>Teléfono: +34 123 456 789</p>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <p>&copy; 2024 Y2KForUS. Todos los derechos reservados.</p>
+            </div>
         </div>
+    </footer>
 
-        <table id="productos-table">
-            <thead>
-                <tr>
-                    <th>Producto</th>
-                    <th>Precio Unitario</th>
-                    <th>Cantidad</th>
-                    <th>Total</th>
-                    <th>Acción</th>
-                </tr>
-            </thead>
-            <tbody id="productos-list">
-                <!-- Los productos se agregarán aquí -->
-            </tbody>
-        </table>
-
-        <div id="total-container">
-            <h3>Total: $<span id="total">0.00</span></h3>
-        </div>
-    </div>
-
-    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
