@@ -3,17 +3,17 @@
         {
             "title": "Motorola RAZR Clásico",
             "description": "Teléfono plegable icónico",
-            "image": "images/razr.jpg"
+            "image": "./images/razr.jpg"
         },
         {
             "title": "Sony Walkman",
             "description": "Música portátil clásica",
-            "image": "images/walkman.jpg"
+            "image": "./images/walkman.jpg"
         },
         {
             "title": "Boombox Años 80",
             "description": "Sonido potente disco",
-            "image": "images/boombox.jpg"
+            "image": "./images/boombox.jpg"
         }
     ]
 }
